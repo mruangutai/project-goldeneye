@@ -1,0 +1,116 @@
+/* =============================================================================
+   Set variables for SASS
+   ========================================================================== */
+
+$orange:#f57206;
+
+$blue:#2c82d9; /* links */
+
+$grey:#ccc;
+
+$linecolor:#ededed;
+
+$fontcolor:#777;
+
+$red:#ac1f1f; /* validation */
+
+$lightblue:#7da0ef; /* info notifications */
+
+$green:#326b17; /*success notifications */
+
+
+
+/* =============================================================================
+   Setup mixins for SASS
+   ========================================================================== */
+
+@mixin clearfix {
+ // For modern browsers
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  // For IE 6/7 (trigger hasLayout)
+  & {
+    zoom:1;
+  }
+}
+
+/* =============================================================================
+   Type
+   ========================================================================== */
+
+
+/* Headings */
+hgroup{
+	border-bottom:1px dotted $grey;
+	margin-bottom:1em;
+}
+
+h1{
+	color:$orange;
+	font-size:1.5em/*24px*/;
+	font-weight:bold;
+	text-transform:capitalize;
+}
+h1+h2{
+	margin-top:-1.5em;
+}
+
+h2{
+	font-size:1em;
+	font-weight:normal;
+	color:#999;
+}
+
+h3{
+	font-size:1.375em/*22px*/;
+	font-weight:normal;
+	text-transform:capitalize;
+	color:#4c4c4c;
+}
+
+h4{
+	font-size:1em;
+	font-weight:bold;
+	text-transform:capitalize;
+	color:#4c4c4c;
+}
+
+
+/* Common */
+.subtle{
+	color:#aaa;
+}
+
+
+/* Quotes */
+blockquote { 
+	quotes: '\201C' '\201D';
+	font-style:italic;
+	color:#999;
+	margin-left:0;
+	margin-right:0;
+	&:before{
+		font-weight:bold;
+		font-size:3em;
+		content: open-quote; 
+		float:left;
+		margin-right:10px;
+	}
+}
+
+/* Lists */
+ol, ul{
+	margin-left:1em;
+	margin-top:0;
+	li{
+		margin-bottom:1em;
+	}
+}

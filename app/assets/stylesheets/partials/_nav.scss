@@ -1,0 +1,260 @@
+/* =============================================================================
+   Set variables for SASS
+   ========================================================================== */
+
+$orange:#f57206;
+
+$blue:#2c82d9; /* links */
+
+$grey:#ccc;
+
+$linecolor:#ededed;
+
+$fontcolor:#777;
+
+$red:#ac1f1f; /* validation */
+
+$lightblue:#7da0ef; /* info notifications */
+
+$green:#326b17; /*success notifications */
+
+
+
+/* =============================================================================
+   Setup mixins for SASS
+   ========================================================================== */
+
+@mixin clearfix {
+ // For modern browsers
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  // For IE 6/7 (trigger hasLayout)
+  & {
+    zoom:1;
+  }
+}
+
+/* =============================================================================
+   Navigation
+   ========================================================================== */
+
+
+nav ul, nav ol{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+
+/* Header navigation */
+.headernav{
+	float:right;
+	font-size:.875em;/*14px*/
+	ul{
+		@include clearfix;
+		border:1px solid #e7e7e7;
+		border-bottom-color:#bdbdbd;
+		-ms-box-shadow:0 1px 1px rgba(0,0,0,.1);
+		-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);
+		-moz-box-shadow:0 1px 1px rgba(0,0,0,.1);
+		box-shadow:0 1px 1px rgba(0,0,0,.1);
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.05));
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.05));
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.05));
+		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.05));
+		-ms-border-radius:3px;
+		-moz-border-radius:3px;
+		-webkit-border-radius:3px;
+		border-radius:3px;
+		li{
+			display:inline;
+			a, button{
+				float:left;
+				display:block;
+				color:#a5a5a5;
+				text-decoration:none;
+				padding:5px 15px;
+				font-weight:bold;
+				border-right:1px solid #e7e7e7; 
+				&:hover, &:focus{
+					color:$blue;
+				}
+			}
+			&:last-child a{
+				border-right:none;
+			}
+		}
+	}
+}
+
+
+/* Footer navigation */
+.footernav{
+	font-size:.825em;/*14px*/
+	float:right;
+	ul{
+		li{
+			display:inline;
+			a{
+				float:left;
+				display:block;
+				padding:.5em;
+				margin:0 .1em;
+				color:#aaa;
+			}
+		}
+	}
+}
+
+
+/* Sidebar navigation */
+.sidenav{
+	ul{
+		li{
+			margin-bottom:0;
+			a, a:visited{
+				color:$blue;
+				display:block;
+				padding:10px 0;
+				border-bottom:#ededed 1px solid;
+				border-top:#fff 1px solid;
+				height:100%;
+				&.current{
+					font-weight:bold;
+				}
+			}
+			&:first-child a{
+				border-top:none;
+			}
+			&:last-child a{
+				border-bottom:none;
+			}
+		}
+	}
+}
+
+
+
+/* Expanding navigation */
+.expanding{
+	ul{
+		margin-left:38px;
+		&:first-child{
+			margin-left:2em;
+		}
+		ul{
+			margin-top:1em;
+		}
+		li{
+			margin-bottom:1em;
+			.folder{
+				color:$blue;
+				cursor:pointer;
+				text-transform:capitalize;
+				&:before{
+					width:33px;
+					height:12px;
+					margin-top:5px;
+					margin-right:5px;
+					opacity:.6;
+					content:"";
+					display:block;
+					float:left;
+					background:url(image-path('sprite.png')) no-repeat 0 -138px;
+				}
+				&.expanded:before{
+					background-position:-40px -138px;
+					width:33px;
+					height:12px;
+					margin-top:5px;
+					opacity:.6;
+				}
+				&:hover{
+					text-decoration:underline;
+				}
+			}
+			a{
+				text-transform:capitalize;
+				&:before{
+					content:"";
+					display:block;
+					float:left;
+					margin-right:5px;
+					background:url(image-path('sprite.png')) no-repeat;
+				}
+				&.page:before{
+					background-position:0 -121px;
+					width:13px;
+					height:16px;
+					margin-top:3px;
+				}
+			}
+		}
+	}
+}
+
+
+/* Users with no javascript and expanding nav */
+.js .collapsed{
+	display:none;
+}
+
+
+/* Pagination */
+.pagination{
+	font-size:0.875em;
+	a.previouspage, a.nextpage{
+		font-weight:bold;
+	}
+	.left{
+		margin-right:1em;
+	}
+}
+
+
+
+/* Link list */
+.linklist{
+	color:#888;
+	padding:0;
+	margin:0;
+	list-style:none;
+	li{
+		margin-bottom:2em;
+		p:last-child{
+			margin-bottom:0;
+		}
+	}
+	h3, h4{
+		margin-bottom:.2em;
+	}
+}
+
+
+
+/* Breadcrumbs */
+.breadcrumbs{
+	border:solid $linecolor;
+	border-width:1px 0;
+	padding:1em 0;
+	font-size:.875em;
+	color:$grey;
+	text-transform:capitalize;
+	p{
+		margin:0;
+	}
+	a, a:visited{
+		color:$grey;
+	}
+	strong{
+		color:$fontcolor;
+	}
+}

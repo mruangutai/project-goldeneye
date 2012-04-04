@@ -1,0 +1,72 @@
+/* =============================================================================
+   Set variables for SASS
+   ========================================================================== */
+
+$orange:#f57206;
+
+$blue:#2c82d9; /* links */
+
+$grey:#ccc;
+
+$linecolor:#ededed;
+
+$fontcolor:#777;
+
+$red:#ac1f1f; /* validation */
+
+$lightblue:#7da0ef; /* info notifications */
+
+$green:#326b17; /*success notifications */
+
+
+
+/* =============================================================================
+   Setup mixins for SASS
+   ========================================================================== */
+
+@mixin clearfix {
+ // For modern browsers
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  // For IE 6/7 (trigger hasLayout)
+  & {
+    zoom:1;
+  }
+}
+
+/* =============================================================================
+   Notifications
+   ========================================================================== */
+
+.notification{
+	padding:10px;
+	border:1px solid;
+	line-height:24px;
+	margin-bottom:20px;
+	&.success{
+		background-color:lighten($green,65%);
+		color:$green;
+		border-color:lighten($green,50%);
+	}
+	&.error{
+		background-color:lighten($red,50%);
+		color:$red;
+		border-color:$red;
+	}
+	&.info{
+		background-color:lighten($lightblue,20%);
+		color:darken($lightblue,20%);
+		border-color:$lightblue;
+	}
+	p:last-child{
+		margin-bottom:0;
+	}
+}

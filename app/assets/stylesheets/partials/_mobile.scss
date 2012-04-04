@@ -1,0 +1,80 @@
+/* =============================================================================
+   Mobile responsive design
+   ========================================================================== */
+
+
+@media only screen and (max-width: 770px){
+
+/* 	Clear all floats and grids */
+	.span1,.span2,.span3,.span4,.span5,.span6,.span7,.span8{
+		width:auto;
+		float:none;
+	}
+	
+/* 	Reduce padding and make sidebar flush */
+	.sidebar{
+		padding:0;
+	}
+	
+/* 	Remove repeating background */
+	#main{
+		background-image:none;
+	}
+	
+/* 	Float top nav left */
+	.headernav{
+		clear:both;
+		margin-top:1em;
+		float:left;
+	}
+	
+/* 	Float search left */
+	header .searchform{
+		clear:both;
+		float:left;
+		margin-top:1em;
+	}
+	
+/* 	Fix home search box */
+	.searchbox input{
+		font-size:1em;
+	}
+	.searchbox button.search{
+		padding:0 1em;
+		height:34px;
+	}
+	
+/* 	Fix home links */
+	.helpoptions li a{
+		background-image:none;
+		padding-left:0;
+	}
+}
+
+
+
+
+@media only screen and (max-width: 480px){
+
+	.searchbox{
+		margin-bottom:0;
+	}
+
+	.searchform{
+		button{
+			display:none;
+		}
+		input{
+			min-width:180px;
+		}
+	}
+	
+	.headernav{
+		width:100%;
+		li a{
+			clear:both;
+			border-right:none !important;
+		}
+	}
+
+}

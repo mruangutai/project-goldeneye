@@ -1,0 +1,20 @@
+/* =============================================================================
+   Javascript Fixes
+   ========================================================================== */
+
+
+/* Hide elements that should not appear if JS is not enabled */
+.no-js{
+	.js{
+		display:none;
+	}
+	
+	&.ie6, &.ie7, &.ie8{
+		/* 	Clear buggy floating */
+		.helpoptions, .headernav, ul{
+			clear:both;
+		}
+	}
+	
+
+}

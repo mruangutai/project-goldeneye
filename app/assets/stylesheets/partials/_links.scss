@@ -1,0 +1,294 @@
+/* =============================================================================
+   Set variables for SASS
+   ========================================================================== */
+
+$orange:#f57206;
+
+$blue:#2c82d9; /* links */
+
+$grey:#ccc;
+
+$linecolor:#ededed;
+
+$fontcolor:#777;
+
+$red:#ac1f1f; /* validation */
+
+$lightblue:#7da0ef; /* info notifications */
+
+$green:#326b17; /*success notifications */
+
+
+
+/* =============================================================================
+   Setup mixins for SASS
+   ========================================================================== */
+
+@mixin clearfix {
+ // For modern browsers
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  // For IE 6/7 (trigger hasLayout)
+  & {
+    zoom:1;
+  }
+}
+
+/* =============================================================================
+   Buttons/Links
+   ========================================================================== */
+
+a, a:visited{
+	color:#2c82d9;
+	text-decoration:underline;
+}
+a:visited{
+	color:#7b72d2;
+}
+a:hover, a:active{
+	color:#2c82d9;
+	text-decoration:none;
+}
+
+.button{
+	display:inline-block;
+	border:1px solid #cccccc;
+	background:#eee;
+	color:#555;
+	font-weight:bold;
+	line-height:inherit;
+	padding:8px 12px;
+	text-decoration:none;
+	background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1));
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1));
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1));
+	background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1));
+	-ms-border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-ms-box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.2);
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.2);
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.2);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.2);
+	&:hover, &:focus{
+		text-decoration:none;
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,.01), rgba(0,0,0,.15));
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,.01), rgba(0,0,0,.15));
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,.01), rgba(0,0,0,.15));
+		background-image: linear-gradient(top, rgba(0,0,0,.01), rgba(0,0,0,.15));
+	}
+	&:active{
+		-ms-box-shadow:inset 0 1px 3px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.2);
+		-webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.2);
+		-moz-box-shadow:inset 0 1px 3px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.2);
+		box-shadow:inset 0 1px 3px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.2);
+	}
+
+
+	/* Primary button */
+	&.primary{
+		background-color:$blue;
+		border-color:darken($blue,20%);
+		color:#fff;
+		padding:4px 20px;
+		-ms-border-radius:20px;
+		-webkit-border-radius:20px;
+		-moz-border-radius:20px;
+		border-radius:20px;
+		&:hover,&:focus{
+			background-color:darken($blue,5%);
+		}
+		&:active{
+		}
+	}
+	
+	/* Secondary button */
+	&.secondary{
+		background-color:#f1f1f1;
+		border-color:#bbb;
+		color:#777;
+		padding:4px 20px;
+		text-shadow:0 1px 0 rgba(255,255,255,.8);
+		-ms-border-radius:20px;
+		-webkit-border-radius:20px;
+		-moz-border-radius:20px;
+		border-radius:20px;
+		&:hover,&:focus{
+			background-color:#e7e6e6;
+		}
+		&:active{
+		}
+	}
+	
+	/* Separate call to action button */
+	&.cta{
+		background-color:$orange;
+		border-color:darken($orange,20%);
+		color:#fff;
+		text-shadow:0 1px 1px rgba(0,0,0,.2);
+		&:hover,&:focus{
+			background-color:darken($orange,1%);
+		}
+		&:active{
+		}
+	}
+}
+
+
+/* Buttons to look like links */
+button.link,input.link{
+	border:none;
+	background:none !important;
+	color:$blue !important;
+	border-bottom:1px solid $blue !important;
+	padding:0;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+
+/* Links with icons and no text */
+.iconlink{
+	display:inline-block;
+	overflow:hidden;
+	text-indent:-9999px;
+	background:url(image-path('sprite.png')) no-repeat;
+}
+
+
+/* =============================================================================
+   Specific links
+   ========================================================================== */
+
+/* Search button with icon */
+.button.search{
+	text-indent:-9999px;
+	overflow:hidden;
+	width:4em;
+	height:36px;
+}
+.button.search:before{
+	content:"";
+	display:block;
+	height:16px;
+	width:16px;
+	background:url(image-path('sprite.png')) no-repeat;
+	margin-left:.5em;
+	float:left;
+}
+
+/* Account icon link */
+a.account:before{
+	height:10px;
+	width:10px;
+	background-position:0 -19px;
+	margin-top:.4em;
+}
+
+/* Contact icon link */
+a.contact:before, button.contact:before{
+	height:10px;
+	width:11px;
+	background-position:-10px -19px;
+	margin-top:.4em;
+}
+
+/* Chat icon link */
+a.chat:before, button.chat:before{
+	height:10px;
+	width:11px;
+	background-position:-10px -19px;
+	margin-top:.4em;
+}
+
+/* Help icon link */
+a.help:before, button.help:before{
+	height:16px;
+	width:16px;
+	background-position:0 -219px;
+	margin-top:2px;
+}
+
+/* PDF link */
+a.pdf:before{
+	height:16px;
+	width:12px;
+	background-position:0 -173px;
+	margin-top:2px;
+}
+
+/* DOC/Word link */
+a.doc:before{
+	height:16px;
+	width:12px;
+	background-position:-12px -173px;
+	margin-top:2px;
+}
+
+/* XLS/Excel link */
+a.xls:before{
+	height:16px;
+	width:12px;
+	background-position:-24px -173px;
+	margin-top:2px;
+}
+
+/* Next link on home screen */
+a.next:after{
+	height:18px;
+	width:17px;
+	background-position:0 -29px;
+	margin-top:3px;
+}
+
+/* Previous link on knowledgebase */
+a.previouspage{
+	float:left;
+	margin-right:1em;
+	&:before{
+		height:12px;
+		width:10px;
+		background-position:0 -161px;
+		margin-top:5px;
+	}
+}
+
+/* Back to previous link */
+a.back:before{
+	background:none;
+	content:"\2190";
+	text-decoration:none !important;
+}	
+
+/* Next link on knowledgebase */
+a.nextpage{
+	float:right;
+	&:after{
+		height:12px;
+		width:10px;
+		background-position:0 -150px;
+		margin-top:5px;
+	}
+}
+
+
+/* Print */
+a.print, a.print:visited{
+	color:#aaa !important;
+}
+a.print:before{
+	width:16px;
+	height:15px;
+	background-position:0 -47px;
+	margin-top:4px;
+}

@@ -1,0 +1,56 @@
+/* =============================================================================
+   IE Fixes
+   ========================================================================== */
+
+
+
+.ie6, .ie7{
+
+	/* Pseudeo fix for IE6 and IE7 search button */
+	button.search{
+		text-indent:0;
+		width:auto;
+		padding:0 .2em !important;
+	}
+	
+	/* Sidebar width fix */
+	.sidebar{
+		padding:0;
+		.sidenav ul{
+			margin:0 10px;
+		}
+	}
+}
+
+
+.ie6{
+	/* Button color fix */
+	.primary, .panel h3 a{
+		color:#fff !important;
+	}
+	
+	/* 	Container width fix */
+	.container{
+		width:920px;
+	}
+	
+	/* Remove png backgrounds */
+	.helpoptions li a{
+		background-image:none;
+	}
+	
+	#main{
+		background-image:none;
+	}
+	
+	/* Header nav float fix */
+	.headernav ul{
+		float:right;
+	}
+}
+
+
+/* Strange width issue with input fields */
+.ie7 form .left input{
+	width:200px;
+}

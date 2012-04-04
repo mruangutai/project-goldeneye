@@ -1,0 +1,27 @@
+<h1>Listing codes</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Short</th>
+    <th>Long</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @codes.each do |code| %>
+  <tr>
+    <td><%= code.code %></td>
+    <td><%= code.short %></td>
+    <td><%= code.long %></td>
+    <td><%= link_to 'Show', code %></td>
+    <td><%= link_to 'Edit', edit_code_path(code) %></td>
+    <td><%= link_to 'Destroy', code, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Code', new_code_path %>

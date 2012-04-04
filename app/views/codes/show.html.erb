@@ -1,20 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Code:</b>
-  <%= @code.code %>
-</p>
-
-<p>
-  <b>Short:</b>
-  <%= @code.short %>
-</p>
-
-<p>
-  <b>Long:</b>
-  <%= @code.long %>
-</p>
-
-
-<%= link_to 'Edit', edit_code_path(@code) %> |
-<%= link_to 'Back', codes_path %>
+	<article class="clearfix">
+		<p><%= link_to 'Back to all ICD-9-CM Diagnosis Codes', codes_path, :class => 'iconbefore back' %></p>
+		<h3><%= @code.code %> <%= @code.short %></h3>
+		<p><%= @code.long %>e<p>
+	</article>

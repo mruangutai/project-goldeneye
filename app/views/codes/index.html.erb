@@ -1,27 +1,12 @@
-<h1>Listing codes</h1>
+	<article class="clearfix">
+		<p><em>14,568 ICD-9-CM Diagnosis Codes Found</em></p>
+		<ol class="searchResults">
 
-<table>
-  <tr>
-    <th>Code</th>
-    <th>Short</th>
-    <th>Long</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @codes.each do |code| %>
-  <tr>
-    <td><%= code.code %></td>
-    <td><%= code.short %></td>
-    <td><%= code.long %></td>
-    <td><%= link_to 'Show', code %></td>
-    <td><%= link_to 'Edit', edit_code_path(code) %></td>
-    <td><%= link_to 'Destroy', code, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Code', new_code_path %>
+			<% @codes.each do |code| %>
+  			<li>
+				<%= link_to raw('<h3>'+code.code+'</h3>'+'<p>'+code.short+'</p>'), code %>
+			</li>
+			<% end %>
+			
+		</ol>
+	</article>

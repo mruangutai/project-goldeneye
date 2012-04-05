@@ -1,5 +1,8 @@
 	<article class="clearfix">
 		<p><em>14,568 ICD-9-CM Diagnosis Codes Found</em></p>
+		
+		<%= will_paginate @codes %>
+		
 		<ol class="searchResults">
 
 			<% @codes.each do |code| %>

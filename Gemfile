@@ -18,6 +18,8 @@ end
 
 gem 'jquery-rails'
 
+gem "modernizr-rails", "~> 2.0.6"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

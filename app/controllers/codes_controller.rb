@@ -2,7 +2,7 @@ class CodesController < ApplicationController
   # GET /codes
   # GET /codes.json
   def index
-    @codes = Code.all
+    @codes = Code.search(params[:search])
     
     respond_to do |format|
       format.html # index.html.erb

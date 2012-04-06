@@ -14,6 +14,8 @@ class CodesController < ApplicationController
   # GET /codes/1.json
   def show
     @code = Code.find(params[:id])
+    
+    @pageTitle = @code.code + " " + @code.short + " - "
 
     respond_to do |format|
       format.html # show.html.erb

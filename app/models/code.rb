@@ -2,7 +2,7 @@ class Code < ActiveRecord::Base
   
   
   def self.search(search, page)
-    max_per_page = 20
+    max_per_page = 2
     if search
       paginate :per_page => max_per_page, :page => page,
                :conditions => [

@@ -1,8 +1,6 @@
 	<article class="clearfix">
 		<p><em><%= @codes.total_entries %> ICD-9-CM Diagnosis Codes Found</em></p>
 		
-		<%= will_paginate @codes %>
-		
 		<ol class="searchResults">
 
 			<% @codes.each do |code| %>
@@ -12,4 +10,6 @@
 			<% end %>
 			
 		</ol>
+		
+		<%= will_paginate @codes %>
 	</article>

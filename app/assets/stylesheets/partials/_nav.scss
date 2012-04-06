@@ -167,11 +167,40 @@ nav ul, nav ol{
 /* Pagination */
 .pagination{
 	font-size:0.875em;
+	margin-bottom:1em;
 	a.previouspage, a.nextpage{
 		font-weight:bold;
 	}
 	.left{
 		margin-right:1em;
+	}
+	a{
+		display:inline-block;
+		padding:3px 10px;
+		border:1px solid #eee;
+		text-decoration:none;
+		font-weight:bold;
+		color:#999;
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;
+		-ms-border-radius:5px;
+		border-radius:5px;
+		&:hover, :focus{
+			background:$blue;
+			color:#fff;
+			border-color:$blue;
+		}
+	}
+	.disabled{
+		display:none;
+	}
+	.current{
+		display:inline-block;
+		padding:3px 10px;
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;
+		-ms-border-radius:5px;
+		border-radius:5px;
 	}
 }
 

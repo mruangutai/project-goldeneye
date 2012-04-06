@@ -18,7 +18,6 @@ $( document ).ready ->
   submitSearch = ->
     $( "form.searchform" ).submit()
 
-  # 'textchange' event comes from lib/jquery.textchange.min.js
   # _.debounce postpones execution until after wait has elapsed since the last
   # time it was invoked. Thanks Rick Wong!
-  $( "input#search" ).bind( "textchange", _.debounce( submitSearch, wait_ms ) )
+  $( "input#search" ).bind( "keyup", _.debounce( submitSearch, wait_ms ) )

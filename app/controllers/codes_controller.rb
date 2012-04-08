@@ -15,12 +15,19 @@ class CodesController < ApplicationController
   def show
     @code = Code.find(params[:id])
     
-    @pageTitle = @code.code + " " + @code.short + " - "
+    # Use slug-history to redirect old-slug to latest-slug.
+    if request.path != code_path(@code)      
+      redirect_to @code, status: :moved_permanently    
+    else
+      @pageTitle = @code.code + " " + @code.short + " - "
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @code }
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @code }
+      end
+
     end
+
   end
 
   # GET /codes/new

@@ -1,5 +1,7 @@
 class Code < ActiveRecord::Base
-  
+  extend FriendlyId
+  friendly_id :short, use: [:slugged, :history]
+
   
   def self.search(search, page)
     max_per_page = 20
@@ -14,6 +16,6 @@ class Code < ActiveRecord::Base
       paginate :per_page => max_per_page, :page => page, :order => 'code'
     end
   end
-  
-  
+
+
 end

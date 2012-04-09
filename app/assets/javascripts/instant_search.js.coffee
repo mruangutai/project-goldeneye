@@ -14,7 +14,7 @@ $( document ).ready ->
 
   # Trigger search event
 
-  wait_ms = 250
+  wait_ms = 1000
   submitSearch = ->
     $( "form.searchform" ).submit()
 

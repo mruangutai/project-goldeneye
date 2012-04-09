@@ -9,7 +9,7 @@ namespace :import do
   task :codes, [:filename] => :environment do |task,args|
     puts( 'Please wait while we create a lot of records...' )
     puts( 'Time for a coffee-break?' )
-    
+   
     firstline=0
     keys = {}
     codes = []
@@ -46,6 +46,10 @@ namespace :import do
     
     Code.import( codes )
 
+    puts( 'Starting to fix friendly-IDs...')
+
+    Code.find_each(&:save)
+    
     puts( 'Done' )
   end
 

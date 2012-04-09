@@ -170,6 +170,13 @@ p.printarticle{
 		display:none;
 	}
 	.searchform input{
-		min-width:260px;
+		width:100%;
+	}
+	
+	.pagination a, .current, .gap{
+		display:none;
+		&.previous_page,&.next_page{
+			display:inline-block !important;
+		}
 	}
 }

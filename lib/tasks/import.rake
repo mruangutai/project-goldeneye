@@ -1,6 +1,4 @@
 require 'csv'
-require 'active_record'
-require 'activerecord-import'
 
 namespace :import do
 
@@ -13,6 +11,11 @@ namespace :import do
     firstline=0
     keys = {}
     codes = []
+
+    Code.delete_all()
+
+    puts( 'Deleted existing records...' )
+    puts( 'Starting bulk-import process...' )
 
     CSV.foreach( args[:filename], :col_sep => ',' ) do |row|
 
@@ -34,21 +37,8 @@ namespace :import do
       params['long']  = row[1].gsub( /[$]/, ',' )
       params['short'] = row[2].gsub( /[$]/, ',' )
 
-      codes << Code.new( params )
+      Code.create( params )
     end
-
-    puts( 'Created new records...' )
-
-    Code.delete_all()
-
-    puts( 'Deleted existing records...' )
-    puts( 'Starting bulk-import process...' )
-    
-    Code.import( codes )
-
-    puts( 'Starting to fix friendly-IDs...')
-
-    Code.find_each(&:save)
     
     puts( 'Done' )
   end

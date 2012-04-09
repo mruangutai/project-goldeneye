@@ -1,26 +1,81 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Page Not Found</title>
+  <meta name="description" content="404 Page Not Found">
+  <meta name="author" content="Kareo">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
+
+  <div class="container">
+	<header>
+		<a href="/" id="logo"><img src="/assets/logo.png" alt="Kareo Logo" title="Kareo"></a>
+		<h1>ICD-9-CM Diagnosis Codes Lookup Tool</h1>
+	</header><!-- End of header -->
+	
+	<section class="searchbox highlight">
+		
+		<form accept-charset="UTF-8" action="/codes" class="searchform" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+		  <label>Search for ICD-9 codes or keywords</label>
+		  <input autofocus="autofocus" id="search" name="search" placeholder="Search for ICD-9 codes or keywords" type="text" value="" />
+		  <button class="button cta search" type="submit">Search</button>
+</form>		
+	</section><!-- End of .search section -->
+
+	<article class="clearfix">
+		<h3>Sorry we couldn't find the page you were looking for</h3>
+		<p>Try the following:
+		<ul>
+			<li>Hit back in your browser and try again</li>
+			<li>Use the search box above to search for an ICD-9-CM Diagnosis Code</li>
+			<li><a href="http://kareo.com/help/contact">Contact us</a> and let us know that this page doesn't work</li>
+			<li>Visit the <a href="http://kareo.com">Kareo homepage</a></li>
+		</ul></p>
+	</article>
+
+
+<footer>
+		<nav class="footernav">
+			<ul>
+				<li><a href="http://kareo.com">Powered by Kareo</a></li>
+			</ul>
+		</nav>
+	</footer>
+	
+  </div> <!--! end of #container -->
+
+
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-31941-8']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
 </body>
 </html>
+

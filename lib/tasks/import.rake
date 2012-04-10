@@ -9,8 +9,6 @@ namespace :import do
     puts( 'Time for a coffee-break?' )
    
     firstline=0
-    keys = {}
-    codes = []
 
     Code.delete_all()
 
@@ -24,7 +22,6 @@ namespace :import do
       end
 
       if ( firstline == 0 ) then
-        keys = row
         firstline=1
         next
       end

@@ -12,12 +12,12 @@ $( document ).ready ->
   moveCaretToEnd( "input#search" )
   
 
-  # Trigger search event
+  # Trigger search event. _.debounce postpones execution until after wait_ms
+  # has elapsed since the last time it was invoked. 
 
   wait_ms = 1000
-  submitSearch = ->
-    $( "form.searchform" ).submit()
 
-  # _.debounce postpones execution until after wait has elapsed since the last
-  # time it was invoked. Thanks Rick Wong!
-  $( "input#search" ).bind( "keyup", _.debounce( submitSearch, wait_ms ) )
+  $( "input#search" ).bind( 
+    "keyup", 
+    _.debounce( ( -> $( "form.searchform" ).submit() ), wait_ms ) 
+  )

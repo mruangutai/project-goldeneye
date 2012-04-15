@@ -5,6 +5,16 @@ namespace :import do
   # rake import:codes[codes.csv]
   desc 'Import CSV file into the Codes Active Record table'
   task :codes, [:filename] => :environment do |task,args|
+    puts( 'Listing tables...' )
+    ActiveRecord::Base.connection.tables.each do |table|
+      puts( table )
+    end
+
+    puts( 'Clear friendly_id_slugs table...')
+    ActiveRecord::Base.connection.execute(
+      'DELETE FROM friendly_id_slugs WHERE 1 = 1'
+    )
+    
     puts( 'Please wait while we create a lot of records...' )
     puts( 'Time for a coffee-break?' )
    

@@ -8,7 +8,7 @@ class Code < ActiveRecord::Base
     if search
       paginate :per_page => max_per_page, :page => page,
                :conditions => [
-                  'code LIKE :search OR long LIKE :search OR short LIKE :search',
+                  'code ILIKE :search OR long ILIKE :search OR short ILIKE :search',
                   {:search => "%#{search}%"}
                 ],
                :order => 'code'

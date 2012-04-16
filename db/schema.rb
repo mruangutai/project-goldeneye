@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20120408220440) do
     t.string   "code"
     t.string   "short"
     t.string   "long"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "slug"
   end
 

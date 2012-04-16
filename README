@@ -40,3 +40,17 @@ rake import:codes[codes.min.csv]
 rails s
 
 
+Setting up heroku as a remote repository.
+
+gem install heroku
+gem install foreman
+heroku update
+heroku login
+# See github ssh
+heroku keys:add
+git remote -v
+git remote add heroku git@heroku.com:app_name.git
+# Later, you can push to heroku
+git push heroku master
+# or push to github
+git push origin master

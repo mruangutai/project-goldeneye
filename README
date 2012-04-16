@@ -14,10 +14,10 @@ Like a boss!
 \____/ \____/_/ \__,_/ \___/_/ /_/\___/\__, /\___/ 
                                       /____/       
 
-# How to set up your PostgreSQL development environment on the mac.
+How to set up your PostgreSQL development environment on the mac.
 
-**Install postgresql from their web-site.**
-**http://www.enterprisedb.com/products-services-training/pgdownload**
+# Install postgresql from their web-site.
+# http://www.enterprisedb.com/products-services-training/pgdownload
 
 # Create a role for the “app_name”
 psql -U postgres
@@ -26,16 +26,17 @@ postgres=# \q
 
 cd /
 sudo find . –name pg_hba.conf
-**Change 'md5' to 'trust' in ./Library/PostgreSQL/9.1/data/pg_hba.conf**
+# Change 'md5' to 'trust' in ./Library/PostgreSQL/9.1/data/pg_hba.conf
 sudo vim ./Library/PostgreSQL/9.1/data/pg_hba.conf
 
-**Restart postgreSQL (or computer)**
+# **Restart postgreSQL (or computer)**
 
-**Go to your project-folder**
+# go to your project-folder
 git pull
 bundle install
 rake db:create
 rake db:migrate
 rake import:codes[codes.min.csv]
 rails s
+
 

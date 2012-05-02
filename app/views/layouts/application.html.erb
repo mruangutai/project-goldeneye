@@ -28,7 +28,7 @@
 	
 	<section class="searchbox highlight">
 		
-		<%= form_tag '/icd9/codes', :method => 'get', :class => 'searchform' do %>
+		<%= form_tag codes_path, :method => 'get', :class => 'searchform' do %>
 		  <%= label_tag nil, 'Search for ICD-9 codes or keywords' %>
 		  <%= text_field_tag :search, params[:search], :autofocus => '', 
 			:placeholder => 'Search for ICD-9 codes or keywords' %>
@@ -51,7 +51,7 @@
 
 <!-- Kiss Insights -->
 <script type="text/javascript">var _kiq = _kiq || [];</script>
-<script type="text/javascript" src="//s3.amazonaws.com/ki.js/31384/66Q.js" async="true"></script>
+<script type="text/javascript" src="http://s3.amazonaws.com/ki.js/31384/66Q.js" async="true"></script>
 
 <!-- Google Analytics -->
 <script type="text/javascript">

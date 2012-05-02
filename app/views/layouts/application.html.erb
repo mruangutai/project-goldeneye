@@ -28,7 +28,7 @@
 	
 	<section class="searchbox highlight">
 		
-		<%= form_tag codes_path, :method => 'get', :class => 'searchform' do %>
+		<%= form_tag 'codes', :method => 'get', :class => 'searchform' do %>
 		  <%= label_tag nil, 'Search for ICD-9 codes or keywords' %>
 		  <%= text_field_tag :search, params[:search], :autofocus => '', 
 			:placeholder => 'Search for ICD-9 codes or keywords' %>

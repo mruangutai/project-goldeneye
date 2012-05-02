@@ -57,4 +57,7 @@ ProjectGoldeneye::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Tell Rails that you are deploying to a subdirectory.
+  config.action_controller.relative_url_root = '/icd9'
 end

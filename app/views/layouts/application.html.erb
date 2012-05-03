@@ -33,7 +33,7 @@
 	
 	<section class="searchbox highlight">
 		<%#= form_tag codes_path, :method => 'get', :class => 'searchform' do %>
-		<form accept-charset="UTF-8" action="http://tools.kareo.com/icd9/codes" class="searchform" method="get">
+		<form accept-charset="UTF-8" action="http://tools.kareo.com/icd9/codes" method="get" class="searchform">
 		  <%= label_tag nil, 'Search for ICD-9 codes or keywords' %>
 		  <%= text_field_tag :search, params[:search], :autofocus => '', 
 			:placeholder => 'Search for ICD-9 codes or keywords' %>

@@ -63,7 +63,4 @@ ProjectGoldeneye::Application.configure do
 
   config.action_controller.asset_host = 'http://tools.kareo.com/icd9'
   
-  # Set the top level domain variable to help run the application in production in a subdirectory
-  TOPLEVELDOMAIN = "http://tools.kareo.com/icd9"
-  
 end

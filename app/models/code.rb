@@ -5,7 +5,7 @@ class Code < ActiveRecord::Base
   
   def self.search( search, page )
     max_per_page = 20
-    if search
+    if ( search and search.strip() != '' ) then
       where( to_search( 'code',  search ) + ' OR ' + to_search( 'long',  search ) + ' OR ' + to_search( 'short',  search ) )
       .paginate( :per_page => max_per_page, :page => page, :order => 'code' )      
     else
@@ -15,19 +15,23 @@ class Code < ActiveRecord::Base
 
 
   def self.to_search( field, search )
-    tokens = search.split( /[,\s]+/ )
-    n = tokens.length
-    i = 0
     result = ''
-    while i < n
-      if i == 0
-        result = field + " ILIKE '%" + tokens[i] + "%'"
-      else
-        result = result + " AND " + field + " ILIKE '%" + tokens[i] + "%'"
+    search.split( /[,\s]+/ ).each do |token|
+      if ( token == nil ) then
+        next
       end
-      i = i + 1
+      if ( result == nil or result.length == 0 ) then
+        result = to_ilike( field, token )
+      else
+        result = result + " AND " + to_ilike( field, token )
+      end
     end 
     '(' + result + ')'
+  end
+
+
+  def self.to_ilike( field, token )
+    field + " ILIKE '%" + token.gsub(/[']/,"\'\'") + "%'"
   end
 
 

@@ -4,6 +4,8 @@ class CodesController < ApplicationController
   def index
     @codes = Code.search( params[:search], params[:page] )
     
+    @pageTitle = "ICD-9-CM Diagnosis Codes Lookup Tool"
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @codes }
@@ -19,7 +21,7 @@ class CodesController < ApplicationController
     if request.path != code_path(@code)      
       redirect_to @code, status: :moved_permanently    
     else
-      @pageTitle = @code.code + " " + @code.short + " - "
+      @pageTitle =  "ICD-9 Code for " + @code.long
 
       respond_to do |format|
         format.html # show.html.erb

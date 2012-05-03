@@ -23,11 +23,11 @@ class Code < ActiveRecord::Base
       if i == 0
         result = field + " ILIKE '%" + tokens[i] + "%'"
       else
-        result = result + " OR " + field + " ILIKE '%" + tokens[i] + "%'"
+        result = result + " AND " + field + " ILIKE '%" + tokens[i] + "%'"
       end
       i = i + 1
     end 
-    result
+    '(' + result + ')'
   end
 
 

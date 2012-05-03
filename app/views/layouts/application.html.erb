@@ -19,7 +19,12 @@
 </head>
 
 <body>
-	<form action="/" method="get"></form>
+	<form action="/" method="get">
+		  <%= label_tag nil, 'Search for ICD-9 codes or keywords' %>
+		  <%= text_field_tag :search, params[:search], :autofocus => '', 
+			:placeholder => 'Search for ICD-9 codes or keywords' %>
+		  <%= button_tag 'Search', :class => 'button cta search', :name => nil %>
+	</form>
   <div class="container">
 	<header>
 		<a href="/" id="logo"><img src="/assets/logo.png" alt="Kareo Logo" title="Kareo"></a>

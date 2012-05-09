@@ -1,6 +1,10 @@
 	<article class="clearfix">
 		<p><em><%= @codes.total_entries %> ICD-9 Diagnosis Codes Found</em></p>
 		
+		<% if @codes.empty? %>
+		<p>You can search for partial descriptions, multiple words and codes. Try making your search term less specific.</p>
+		<% end %>
+		
 		<ol class="searchResults">
 
 			<% @codes.each do |code| %>

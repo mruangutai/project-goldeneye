@@ -5,7 +5,7 @@
 
 			<% @codes.each do |code| %>
   			<li>
-				<%= link_to raw('<h3>'+code.code+'</h3>'+'<p>'+code.short+'</p>'), code %>
+				<%= link_to raw('<h3>'+code.code+'</h3>'+'<p>'+truncate(code.long, :length => 120)+'</p>'), code %>
 			</li>
 			<% end %>
 			

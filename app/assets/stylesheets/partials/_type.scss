@@ -70,3 +70,17 @@ ol, ul{
 		margin-bottom:1em;
 	}
 }
+
+
+/* ICD9 Codes */
+.code{
+	display:inline-block;
+	background:$orange;
+	color:#fff;
+	padding:5px 20px;
+	font-size:2em;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	border-radius:5px;
+}

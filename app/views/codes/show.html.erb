@@ -1,5 +1,6 @@
 	<article class="clearfix">
 		<p><%= link_to 'Back to ICD-9 Codes', :back, :class => 'iconbefore back' %></p>
-		<h3><%= @code.code %> <%= @code.short %></h3>
-		<p><%= @code.long %><p>
+		<h3><%= @code.long %></h3>
+		<p><span class="code"><%= @code.code %></span></p>
+		<p>Short description: <%= @code.short %><p>
 	</article>

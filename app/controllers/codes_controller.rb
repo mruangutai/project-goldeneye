@@ -5,6 +5,7 @@ class CodesController < ApplicationController
     @codes = Code.search( params[:search], params[:page] )
     
     @pageTitle = "ICD-9-CM Diagnosis Codes Lookup Tool"
+    @pageDesc = "Quick lookup tool for ICD-9 Codes &amp; Descriptions"
     
     respond_to do |format|
       format.html # index.html.erb
@@ -22,6 +23,7 @@ class CodesController < ApplicationController
       redirect_to @code, status: :moved_permanently    
     else
       @pageTitle =  "ICD-9 Code for " + @code.long
+      @pageDesc = "Quick lookup tool for ICD-9 Code for " + @code.long
 
       respond_to do |format|
         format.html # show.html.erb

@@ -1,4 +1,4 @@
-$( document ).ready ->
+$ ->
 
   # Make sure the cursor is at the end of the text.
 
@@ -18,6 +18,6 @@ $( document ).ready ->
   wait_ms = 1000
 
   $( "input#search" ).bind( 
-    "keyup", 
+    "textchange", 
     _.debounce( ( -> $( "form.searchform" ).submit() ), wait_ms ) 
   )

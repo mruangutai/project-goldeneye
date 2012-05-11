@@ -8,4 +8,5 @@
 //= require jquery_ujs
 //= require modernizr
 //= require underscore
+//= require textchange
 //= require_tree .

@@ -19,5 +19,5 @@ $ ->
 
   $( "input#search" ).bind( 
     "textchange", 
-    _.debounce( ( -> $( "form.searchform" ).submit() ), wait_ms ) 
+    _.debounce( ( (event, previousText) -> $( "form.searchform" ).submit() ), wait_ms ) 
   )

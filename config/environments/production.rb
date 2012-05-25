@@ -1,5 +1,7 @@
 ProjectGoldeneye::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  config.assets.js_compressor = :uglifier
+  config.assets.css_compressor = :yui
 
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -61,6 +63,6 @@ ProjectGoldeneye::Application.configure do
   # Tell Rails that you are deploying to a subdirectory.
   #config.action_controller.relative_url_root = '/icd9'
 
-  config.action_controller.asset_host = 'http://tools.kareo.com/icd9'
+  #config.action_controller.asset_host = 'http://tools.kareo.com/icd9'
   
 end

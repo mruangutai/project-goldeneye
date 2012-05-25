@@ -118,7 +118,7 @@ button.link,input.link{
 	display:inline-block;
 	overflow:hidden;
 	text-indent:-9999px;
-	background:url(image-path('sprite.png')) no-repeat;
+	background:url(/assets/sprite.png) no-repeat;
 }
 
 
@@ -138,7 +138,7 @@ button.link,input.link{
 	display:block;
 	height:16px;
 	width:16px;
-	background:url(image-path('sprite.png')) no-repeat;
+	background:url(/assets/sprite.png) no-repeat;
 	margin-left:.5em;
 	float:left;
 }

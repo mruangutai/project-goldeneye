@@ -124,7 +124,7 @@ nav ul, nav ol{
 					content:"";
 					display:block;
 					float:left;
-					background:url(/assets/sprite.png) no-repeat 0 -138px;
+					background:url(image-path('sprite.png')) no-repeat 0 -138px;
 				}
 				&.expanded:before{
 					background-position:-40px -138px;
@@ -144,7 +144,7 @@ nav ul, nav ol{
 					display:block;
 					float:left;
 					margin-right:5px;
-					background:url(/assets/sprite.png) no-repeat;
+					background:url(image-path('sprite.png')) no-repeat;
 				}
 				&.page:before{
 					background-position:0 -121px;

@@ -91,7 +91,7 @@ footer{
 	display:block;
 	float:left;
 	margin-right:5px;
-	background:url(/assets/sprite.png) no-repeat;
+	background:url(image-path('sprite.png')) no-repeat;
 }
 
 /* For any elements that have icons after */
@@ -100,7 +100,7 @@ footer{
 	display:block;
 	float:right;
 	margin-left:5px;
-	background:url(/assets/sprite.png) no-repeat;
+	background:url(image-path('sprite.png')) no-repeat;
 }
 
 /* Floating */

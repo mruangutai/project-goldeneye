@@ -63,6 +63,6 @@ ProjectGoldeneye::Application.configure do
   # Tell Rails that you are deploying to a subdirectory.
   #config.action_controller.relative_url_root = '/icd9'
 
-  #config.action_controller.asset_host = 'http://tools.kareo.com/icd9'
+  config.action_controller.asset_host = 'http://tools.kareo.com/icd9'
   
 end

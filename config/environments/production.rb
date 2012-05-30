@@ -1,5 +1,10 @@
 ProjectGoldeneye::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  
+  # Add Cache-Control headers to the responses. Max-age in seconds.
+  config.static_cache_control = "public, max-age=31536000"
+
+  # Specify the js and css compressors
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :yui
 

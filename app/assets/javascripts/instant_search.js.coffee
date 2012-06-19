@@ -21,9 +21,10 @@ $ ->
     _.debounce( ( (event, previousText) -> $( "form.searchform" ).submit() ), wait_ms ) 
   )
   
-  $( 'form.searchform' ).submit (event) ->
-    event.preventDefault()
-    $.pjax
-      container: '[data-pjax-container]'
-      url: @.action + "?" + $(@).serialize()
-    return false
+  if $.support.pjax
+    $( 'form.searchform' ).submit (event) ->
+      event.preventDefault()
+      $.pjax
+        container: '[data-pjax-container]'
+        url: @.action + "?" + $(@).serialize()
+      return false

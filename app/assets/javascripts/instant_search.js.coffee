@@ -1,4 +1,10 @@
 $ ->
+  # Don't let the user enter text while we refresh the page.
+
+  enableSearch = ( isEnabled ) ->
+      $( "input#search" ).attr( "disabled", not isEnabled )
+
+
   # Make sure the cursor is at the end of the text.
 
   moveCaretToEnd = ( obj ) ->
@@ -18,13 +24,21 @@ $ ->
 
   $( "input#search" ).bind( 
     "textchange", 
-    _.debounce( ( (event, previousText) -> $( "form.searchform" ).submit() ), wait_ms ) 
+    _.debounce( 
+      ( ( event, previousText ) ->
+        $( "form.searchform" ).submit()        
+        enableSearch( false ) if not $.support.pjax
+      ),
+      wait_ms 
+    ) 
   )
   
   if $.support.pjax
-    $( 'form.searchform' ).submit (event) ->
+    $( "form.searchform" ).submit ( event ) ->
       event.preventDefault()
       $.pjax
         container: '[data-pjax-container]'
-        url: @.action + "?" + $(@).serialize()
+        url: @.action + "?" + $( @ ).serialize()
       return false
+  
+  enableSearch( true )

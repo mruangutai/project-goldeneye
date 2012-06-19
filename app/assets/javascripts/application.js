@@ -9,4 +9,5 @@
 //= require jquery_ujs
 //= require underscore
 //= require textchange
+//= require jquery.pjax
 //= require_tree .

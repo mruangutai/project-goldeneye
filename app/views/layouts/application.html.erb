@@ -27,21 +27,8 @@
 		<a href="/" id="logo"><img src="/assets/logo.png" alt="Kareo Logo" title="Kareo"></a>
 		<h1>ICD-9-CM Diagnosis Codes Lookup Tool</h1>
 	</header><!-- End of header -->
-	
-	<section class="searchbox highlight">
-		<!-- Application Request Routing needs the HTML attributes in this order -->
-		<form action="/codes" method="get" class="searchform" accept-charset="UTF-8">
-		  <%= label_tag nil, 'Search for ICD-9 codes or keywords' %>
-		  <%= text_field_tag :search, params[:search], :autofocus => '', 
-			:placeholder => 'Search for ICD-9 codes or keywords' %>
-		  <%= button_tag 'Search', :class => 'button cta search', :name => nil %>
-		</form>
 		
-	</section><!-- End of .search section -->
-	
-	<div data-pjax-container>
-	  <%= yield %>
-	</div>
+	<%= yield %>
 	
 	<footer>
 		<nav class="footernav">

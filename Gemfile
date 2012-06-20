@@ -33,8 +33,6 @@ gem "thin"
 
 gem "yui-compressor"
 
-gem 'rack-pjax'
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

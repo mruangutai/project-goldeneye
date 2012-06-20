@@ -12,33 +12,23 @@ $ ->
     if value?
       $( obj ).focus().val( "" )
       $( obj ).focus().val( value )
-      $( obj ).unbind()
+      $( obj ).unbind()  
 
+  enableSearch( true )
   moveCaretToEnd( "input#search" )
-  
 
   # Trigger search event. _.debounce postpones execution until after wait_ms
   # has elapsed since the last time it was invoked. 
   
-  wait_ms = 1000
+  wait_ms = 1250
 
-  $( "input#search" ).bind( 
+  $( "input#search.index" ).bind( 
     "textchange", 
     _.debounce( 
       ( ( event, previousText ) ->
-        $( "form.searchform" ).submit()        
-        enableSearch( false ) if not $.support.pjax
+        $( "form.searchform.index" ).submit()
+        enableSearch( false )
       ),
       wait_ms 
     ) 
   )
-  
-  if $.support.pjax
-    $( "form.searchform" ).submit ( event ) ->
-      event.preventDefault()
-      $.pjax
-        container: '[data-pjax-container]'
-        url: @.action + "?" + $( @ ).serialize()
-      return false
-  
-  enableSearch( true )

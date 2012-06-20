@@ -35,10 +35,11 @@ $ ->
   
   if $.support.pjax
     $( "form.searchform" ).submit ( event ) ->
-      event.preventDefault()
+      event.preventDefault()      
       $.pjax
         container: '[data-pjax-container]'
         url: @.action + "?" + $( @ ).serialize()
+      console.log( @.action + "?" + $( @ ).serialize() )
       return false
   
   enableSearch( true )

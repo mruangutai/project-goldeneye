@@ -42,6 +42,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    concurrent-ruby (1.1.5)
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.0)
@@ -50,7 +51,8 @@ GEM
       multi_json (~> 1.0)
     friendly_id (4.0.9)
     hike (1.2.1)
-    i18n (0.6.1)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     journey (1.0.4)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
